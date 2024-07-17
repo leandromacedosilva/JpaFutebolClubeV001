@@ -2,6 +2,7 @@
 
 querys for postgres sgdb
 .........................................................................
+database jpafcstoragedb
 select * from information_schema.tables where table_schema = 'public';
 select * from tbjogador;
 select * from tbtime;
