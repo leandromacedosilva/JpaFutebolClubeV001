@@ -2,7 +2,6 @@ package com.jpafutebolclube.model;
 
 import java.io.Serializable;
 import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,7 +16,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "tbtime")
-@SequenceGenerator(name = "seq_tbtime", sequenceName = "seq_tbtime", initialValue = 1)
+@SequenceGenerator(name = "seq_tbtime", sequenceName = "seq_tbtime", initialValue = 1, allocationSize = 1)
 public class Time implements Serializable {
     @Id
     @GeneratedValue(generator = "seq_tbtime", strategy = GenerationType.SEQUENCE)
@@ -37,6 +36,10 @@ public class Time implements Serializable {
     public Time(String nome, List<Jogador> jogadores) {
         this.nome = nome;
         this.jogadores = jogadores;
+    }
+
+    public Time(String nome) {
+        this.nome = nome;
     }
 
     public Long getId() {
@@ -67,6 +70,5 @@ public class Time implements Serializable {
     public String toString() {
         return "Time{" + "id=" + id + ", nome=" + nome + ", jogadores=" + jogadores + '}';
     }
-    
     
 }

@@ -6,7 +6,7 @@ package com.jpafutebolclube.util;
  */
 public class Message {
     public String msg;
-    public String message(String message) {
-        return msg = message;
+    public static void message(String msg) {
+        System.out.println("" + msg);
     }
 }
