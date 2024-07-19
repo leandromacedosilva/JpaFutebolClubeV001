@@ -1,7 +1,6 @@
 package com.jpafutebolclube.driver;
 
-import com.jpafutebolclube.util.JpaEmUtil;
-import javax.persistence.EntityManager;
+import com.jpafutebolclube.dao.JogadorDAO;
 
 /**
  *
@@ -9,9 +8,8 @@ import javax.persistence.EntityManager;
  */
 public class MainQueryForName {
     public static void main(String[] args) {
-        EntityManager em = JpaEmUtil.openConnection();
-        em.getTransaction().begin();
-        em.getTransaction().commit();
-        JpaEmUtil.closeConnection();
+        JogadorDAO jogadorDAO = new JogadorDAO();
+        JogadorDAO j = (JogadorDAO) jogadorDAO.allPlayersForName();
+        System.out.println("" + j);
     }
 }

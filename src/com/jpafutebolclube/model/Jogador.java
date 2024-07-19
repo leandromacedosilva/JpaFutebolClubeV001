@@ -37,6 +37,12 @@ public class Jogador implements Serializable {
         this.nome = nome;
         this.posicao = posicao;
     }
+    
+    public void playerInformation() {
+        System.out.println("CODIGO: " + this.id);
+        System.out.println("NOME: " + this.nome);
+        System.out.println("POSICAO: " + this.posicao);
+    }
 
     public void adicionarJogador() {
         if(this.nome != null) {

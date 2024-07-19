@@ -4,6 +4,7 @@ import com.jpafutebolclube.model.Jogador;
 import com.jpafutebolclube.util.JpaEmUtil;
 import java.util.List;
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 /**
  *
@@ -43,9 +44,28 @@ public class JogadorDAO {
         JpaEmUtil.closeConnection();
     }
     
+    
     public List<Jogador> allPlayers() {
+        try {
         EntityManager em = JpaEmUtil.openConnection();
         String query = "SELECT j FROM Jogador j";
         return em.createQuery(query).getResultList();
+        } finally {
+            JpaEmUtil.closeConnection();
+        }
     } 
+    
+    public List<Jogador> allPlayersForName() {
+        try {
+            EntityManager em = JpaEmUtil.openConnection();
+            String query = "SELECT j FROM Jogador j WHERE LOWER(j.nome) LIKE :nome";
+            Query queryh = em.createQuery(query);
+            queryh.setParameter("nome", "%o%");
+            List<Jogador> jogadores = queryh.getResultList();
+            System.out.println("Resultador: " + jogadores);
+        } finally {
+            JpaEmUtil.closeConnection();
+        }
+        return null;
+    }
 }
