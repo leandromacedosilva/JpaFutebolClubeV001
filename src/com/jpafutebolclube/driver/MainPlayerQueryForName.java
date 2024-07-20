@@ -6,7 +6,7 @@ import com.jpafutebolclube.dao.JogadorDAO;
  *
  * @author leandro
  */
-public class MainQueryForName {
+public class MainPlayerQueryForName {
     public static void main(String[] args) {
         JogadorDAO jogadorDAO = new JogadorDAO();
         JogadorDAO j = (JogadorDAO) jogadorDAO.allPlayersForName();

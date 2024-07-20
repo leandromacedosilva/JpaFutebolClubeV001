@@ -9,7 +9,7 @@ import javax.persistence.EntityManager;
  *
  * @author leandro
  */
-public class MainQueryID {
+public class MainPlayerQueryID {
     public static void main(String[] args) {
      JogadorDAO jogadorDAO = new JogadorDAO();
      Jogador j = jogadorDAO.consultar(12L);

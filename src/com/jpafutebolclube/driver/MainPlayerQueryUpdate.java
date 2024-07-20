@@ -7,7 +7,7 @@ import com.jpafutebolclube.model.Jogador;
  *
  * @author leandro
  */
-public class MainQueryUpdate {
+public class MainPlayerQueryUpdate {
     public static void main(String[] args) {
         
         JogadorDAO jogadorDAO = new JogadorDAO();

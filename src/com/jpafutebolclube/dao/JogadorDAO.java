@@ -12,38 +12,53 @@ import javax.persistence.Query;
  */
 public class JogadorDAO {
     public void salvar(Jogador jogador){
+        try{
+            System.out.println("PERSISTINDO DADOS NO BANCO DE DADOS.");
         EntityManager em  = JpaEmUtil.openConnection();
         em.getTransaction().begin();
         em.persist(jogador);
         em.getTransaction().commit();
+        } finally{
         JpaEmUtil.closeConnection();
+        System.out.println("A CONEXAO COM O BANCO DE DADO FOI ENCERRADA.");
+        }
     }
     
     public void salvarList(List<Jogador> jogadores){
+        try{
+            System.out.println("PERSISTINDO DADOS NO BANCO DE DADOS.");
         EntityManager em  = JpaEmUtil.openConnection();
         em.getTransaction().begin();
         for(Jogador j : jogadores) {
             em.persist(j);
         }
         em.getTransaction().commit();
+        } finally {
         JpaEmUtil.closeConnection();
+        System.out.println("A CONEXAO COM O BANCO DE DADO FOI ENCERRADA.");
+        }
     }
     
     public Jogador consultar(Long id) {
+        try {
         EntityManager em = JpaEmUtil.openConnection();
         return em.find(Jogador.class, id);
-        //JpaEmUtil.closeConnection();
+        } finally {
+        JpaEmUtil.closeConnection();
+        }
     }
     
     public void atualizar(Jogador jogador){
+        try{
         EntityManager em = JpaEmUtil.openConnection();
         em.getTransaction().begin();
         em.merge(jogador);
         em.flush();
         em.getTransaction().commit();
+        } finally {
         JpaEmUtil.closeConnection();
+        }
     }
-    
     
     public List<Jogador> allPlayers() {
         try {

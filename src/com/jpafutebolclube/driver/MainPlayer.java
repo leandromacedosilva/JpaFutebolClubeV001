@@ -9,7 +9,7 @@ import java.util.List;
  *
  * @author leandro
  */
-public class Main {
+public class MainPlayer {
     public static void main(String[] args) {
         Jogador jogador001 = new Jogador();
         jogador001.setNome("Romulo");
