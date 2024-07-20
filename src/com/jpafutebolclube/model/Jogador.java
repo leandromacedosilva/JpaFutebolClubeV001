@@ -1,5 +1,6 @@
 package com.jpafutebolclube.model;
 
+import com.jpafutebolclube.generic.GenericEntity;
 import com.jpafutebolclube.util.Message;
 import java.io.Serializable;
 //import javax.persistence.CascadeType;
@@ -18,7 +19,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "tbjogador")
 @SequenceGenerator(name = "seq_tbjogador", sequenceName = "seq_tbjogador", initialValue = 1, allocationSize = 1)
-public class Jogador implements Serializable {
+public class Jogador extends GenericEntity {
     @Id
     @GeneratedValue(generator = "seq_tbjogador", strategy = GenerationType.SEQUENCE)
     private Long id;

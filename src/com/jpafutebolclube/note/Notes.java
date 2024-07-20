@@ -29,6 +29,10 @@ select * from tbcontact;
 drop table tbhardware_tbprovider;
 --------------------------------------------------
 stop in
+Serviço Genérico - Estruturando o Projeto
+00:37:42, 00:33:27
+00:35:33 -> ponto importante
+
  Persistindo Pessoa e Atividade @OneToMany
  Persistindo Pessoa e Endereço @OneToOne
  Mapeando Pessoa e Endereço @OneToOne , @OneToMany
