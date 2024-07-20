@@ -8,6 +8,18 @@ select * from tbjogador;
 select * from tbtime;
 select * from tbtime_tbjogador;
 
+select 
+ jg.nome
+,jg.posicao
+,tm.nome as clube
+from tbjogador jg INNER JOIN tbtime tm ON jg.id = 1;
+
+select 
+ jg.nome
+,jg.posicao
+,tm.nome as clube
+from tbjogador jg INNER JOIN tbtime tm ON jg.id is not null;
+
 select * from information_schema.tables where table_schema = 'public';
 select * from tbplayer;
 select * from tbaddress;
