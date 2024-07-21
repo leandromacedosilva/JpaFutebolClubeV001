@@ -59,7 +59,8 @@ public class TimeDAO {
         try {
             System.out.println("PERSISTINDO DADOS NO BANCO DE DADOS.");
         EntityManager em = JpaEmUtil.openConnection();
-        String query = "SELECT j FROM Jogador j";
+        String query = "SELECT j FROM Jogador j WHERE j.id = 4";
+        //String query = "SELECT j.id,j.nome,j.posicao,t.nome FROM Jogador j INNER JOIN Time t ON j.id = 7";
         return em.createQuery(query).getResultList();
         } finally {
             JpaEmUtil.closeConnection();

@@ -20,6 +20,7 @@ public abstract class GenericEntity implements Serializable {
     
     public GenericEntity() {
         active = Boolean.TRUE;
+        dateRegister = (new Date());
     }
 
     public Boolean getActive() {

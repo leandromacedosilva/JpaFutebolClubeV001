@@ -13,9 +13,9 @@ public class MainTeamWithPlayersQueryList {
         TimeDAO timeDAO = new TimeDAO();
         List<Jogador> jogadores = timeDAO.allPlayers();
         System.out.println("");
-        System.out.println("************************* PLAYERS OF LIST **************************************************");
+        System.out.println("############################################################ PLAYERS OF LIST ###################################################################");
         System.out.println("" + jogadores);
-        System.out.println("********************************************************************************************");
+        System.out.println("################################################################################################################################################");
         System.out.println("");
     }
 }
