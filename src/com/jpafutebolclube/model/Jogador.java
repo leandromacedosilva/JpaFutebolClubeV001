@@ -21,24 +21,28 @@ public class Jogador extends GenericEntity {
     @GeneratedValue(generator = "seq_tbjogador", strategy = GenerationType.SEQUENCE)
     private Long id;
     private String nome;
+    private String cpf;
     private String posicao;
       
     public Jogador() {}
 
-    public Jogador(Long id, String nome, String posicao) {
+    public Jogador(Long id, String nome, String cpf, String posicao) {
         this.id = id;
         this.nome = nome;
+        this.cpf = cpf;
         this.posicao = posicao;
     }
 
-    public Jogador(String nome, String posicao) {
+    public Jogador(String nome, String cpf, String posicao) {
         this.nome = nome;
+        this.cpf = cpf;
         this.posicao = posicao;
     }
     
     public void playerInformation() {
         System.out.println("CODIGO: " + this.id);
         System.out.println("NOME: " + this.nome);
+        System.out.println("CPF: " + this.cpf);
         System.out.println("POSICAO: " + this.posicao);
     }
 
@@ -64,6 +68,14 @@ public class Jogador extends GenericEntity {
         this.nome = nome;
     }
 
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+    
     public String getPosicao() {
         return posicao;
     }
@@ -74,7 +86,7 @@ public class Jogador extends GenericEntity {
 
     @Override
     public String toString() {
-        return "Jogador{" + "id=" + id + ", nome=" + nome + ", posicao=" + posicao + '}';
+        return "Jogador{" + "id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", posicao=" + posicao + '}';
     }
     
 }

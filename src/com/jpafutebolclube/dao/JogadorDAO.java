@@ -1,5 +1,6 @@
 package com.jpafutebolclube.dao;
 
+import static com.jpafutebolclube.generic.GenericEntity_.active;
 import com.jpafutebolclube.model.Jogador;
 import com.jpafutebolclube.util.JpaEmUtil;
 import java.util.List;
@@ -82,5 +83,26 @@ public class JogadorDAO {
             JpaEmUtil.closeConnection();
         }
         return null;
+    }
+    
+    public void playerDel() {
+        try{
+            EntityManager em = JpaEmUtil.openConnection();
+            em.getTransaction().begin();
+            if(active == active) {
+                String query = "SELECT j FROM Jogador j WHERE j.id = :id";
+                Query queryh = em.createQuery(query);
+                queryh.setParameter("id", "2L");
+                Jogador jogador = (Jogador) queryh.getResultList();
+                jogador.setActive(Boolean.FALSE);
+                System.out.println("AS INFORMACOES DO JOGADOR FOI DELETADA COM SUCESSO!");
+                //Jogador jogador = em.find(Jogador.class, id);
+                
+                //em.remove(jogador);
+            }
+            em.getTransaction().commit();
+        } finally {
+            JpaEmUtil.closeConnection();
+        }
     }
 }
