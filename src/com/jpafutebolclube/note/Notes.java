@@ -41,6 +41,8 @@ select * from tbcontact;
 drop table tbhardware_tbprovider;
 --------------------------------------------------
 stop in
+GenericDAO em PessoaController
+00:10:59
 Serviço Genérico - Estruturando o Projeto
 00:37:42, 00:33:27
 00:35:33 -> ponto importante
